@@ -15,6 +15,7 @@ namespace Unit02.Game
         bool isPlaying = true;
         int score = 0;
         int totalScore = 0;
+        int in_play = 0;
 
         /// <summary>
         /// Constructs a new instance of Director.
@@ -60,13 +61,16 @@ namespace Unit02.Game
             {
                 return;
             }
-
+            
             score = 0;
             foreach (Die die in dice)
             {
+                if (die.in_play == true) {
                 die.Roll();
                 score += die.points;
+                }
             }
+            
             totalScore += score;
         }
 
@@ -80,15 +84,20 @@ namespace Unit02.Game
                 return;
             }
 
-            string values = "";
+            string kept = "";
+            string re_roll = "";
+            int used = 0;
             foreach (Die die in dice)
             {
-                values += $"{die.value} ";
+                if (die.in_play == false) {kept += $"{die.value} "; used += 1;}   
+                if (die.in_play == true) {re_roll += $"{die.value} ";}
             }
 
-            Console.WriteLine($"You rolled: {values}");
+            Console.WriteLine($"Dice kept: {kept}");
+            Console.WriteLine($"Re-rolls: {re_roll}");
             Console.WriteLine($"Your score is: {totalScore}\n");
-            isPlaying = (score > 0);
+            if (score == 0) {isPlaying = false; Console.WriteLine("Farkle!");}
+            if (used == 5) {Console.WriteLine("Re-Roll all dice!");}
         }
     }
 }
