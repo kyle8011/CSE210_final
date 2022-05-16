@@ -24,7 +24,7 @@ namespace Unit03.Game
             location = random.Next(1001);
             // start with two so GetHint always works
             distance.Add(0);
-            distance.Add(0);
+            distance.Add(location);
         }
 
         /// <summary>

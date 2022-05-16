@@ -38,7 +38,7 @@ namespace Unit03.Game
         /// </summary>
         private void GetInputs()
         {
-            terminalService.WriteText(hider.location.ToString());
+            //terminalService.WriteText(hider.location.ToString());
             int location = terminalService.ReadNumber("\nEnter a location [1-1000]: ");
             seeker.MoveLocation(location);
         }

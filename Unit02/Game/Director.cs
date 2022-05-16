@@ -15,7 +15,7 @@ namespace Unit02.Game
         bool isPlaying = true;
         int score = 0;
         int totalScore = 0;
-        int in_play = 0;
+        //int in_play = 0;
 
         /// <summary>
         /// Constructs a new instance of Director.
@@ -101,5 +101,3 @@ namespace Unit02.Game
         }
     }
 }
-
-
