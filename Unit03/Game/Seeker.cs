@@ -16,6 +16,7 @@ namespace Unit03.Game
         public class Seeker{
 
         public int SeekerLocation = 0;
+        private TerminalService terminalService = new TerminalService();
 
 
     // 2) Create the class constructor. Use the following method comment.
@@ -25,7 +26,9 @@ namespace Unit03.Game
         /// </summary>
         public Seeker()
         {
-
+            //Random random = new Random();
+            //SeekerLocation = random.Next(1001);
+            //terminalService.WriteText($"Current location: {SeekerLocation}");
         }
        
 
@@ -47,10 +50,10 @@ namespace Unit03.Game
         /// Moves to the given location.
         /// </summary>
         /// <param name="location">The given location.</param>
-        public int MoveLocation(int location)
+        public void MoveLocation(int location)
         {
             SeekerLocation = location;
-            return SeekerLocation;
+            //return SeekerLocation;
         }
     
 }   }
